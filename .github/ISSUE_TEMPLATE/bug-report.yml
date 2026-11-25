@@ -1,0 +1,78 @@
+name: Сообщить об ошибке
+description: Проблема с установкой, патчем, службой или подключением
+title: "[Ошибка]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Перед отправкой выполните «Проверить» и ознакомьтесь с разделом устранения проблем. Не публикуйте cookies, данные Google-аккаунта и содержимое чатов.
+
+  - type: input
+    id: helper-version
+    attributes:
+      label: Версия PrivetAntigravity
+      placeholder: 0.1.0-beta
+    validations:
+      required: true
+
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Операционная система
+      options:
+        - Windows 11 x64
+        - Windows 10 x64
+        - Arch Linux x86_64
+        - Другая система
+    validations:
+      required: true
+
+  - type: input
+    id: antigravity-version
+    attributes:
+      label: Версия и вариант Antigravity
+      description: Укажите номер версии и вариант установки — Desktop, IDE или CLI.
+      placeholder: 1.5.16, CLI
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Что произошло
+      description: Опишите ожидаемое и фактическое поведение, включая точный текст ошибки.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Как повторить
+      placeholder: |
+        1. Полностью закрыл Antigravity
+        2. Нажал «Включить»
+        3. Нажал «Проверить»
+        4. Получил сообщение…
+    validations:
+      required: true
+
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Результат проверки и журнал
+      description: Вставьте результат кнопки «Проверить» и только относящиеся к ошибке строки service.log. Удалите имена пользователя и локальные пути, если они для отчёта не нужны.
+      render: text
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Перед отправкой
+      options:
+        - label: Я полностью закрыл Antigravity и повторил действие.
+          required: true
+        - label: Я проверил последнюю версию PrivetAntigravity в Releases.
+          required: true
+        - label: В отчёте нет данных аккаунта, cookies и содержимого чатов.
+          required: true
