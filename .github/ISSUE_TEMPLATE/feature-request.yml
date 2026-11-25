@@ -1,0 +1,45 @@
+name: Предложить улучшение
+description: Новая возможность или улучшение PrivetAntigravity
+title: "[Идея]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Какую проблему решит улучшение
+      description: Опишите текущий сценарий и что приходится делать вручную.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Как должно работать
+      description: Опишите ожидаемый результат и основные шаги пользователя.
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Платформа
+      options:
+        - Windows 10/11
+        - Arch Linux
+        - Обе платформы
+        - Не относится к платформе
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Дополнительная информация
+      description: Можно приложить обезличенный скриншот или ссылку на связанную документацию.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Перед отправкой
+      options:
+        - label: Я проверил открытые issues и не нашёл такого предложения.
+          required: true
+        - label: Предложение не требует отключать проверку сертификатов или публиковать данные аккаунта.
+          required: true
